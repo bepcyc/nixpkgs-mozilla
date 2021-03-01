@@ -189,8 +189,8 @@ in
   # Set of packages which used to build developer environment
   devEnv = (super.shell or {}) // {
     gecko = super.callPackage ./pkgs/gecko {
-      inherit (self.python36Packages) setuptools;
-      pythonFull = self.python36Full;
+      inherit (self.python37Packages) setuptools;
+      pythonFull = self.python37Full;
       nodejs =
         if builtins.compareVersions self.nodejs.name "nodejs-8.11.3" < 0
         then self.nodejs-8_x else self.nodejs;
